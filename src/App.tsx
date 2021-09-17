@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-function App () {
-  return (
+function App() {
+    return (
         <div>
-            <h1>Fvaly</h1>
+            <h2>Fvaly</h2>
         </div>
-  )
+    );
 }
 
-export default App
+export default App;

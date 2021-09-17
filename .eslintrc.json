@@ -4,7 +4,11 @@
         "es2021": true,
         "node": true
     },
-    "extends": ["plugin:react/recommended", "standard"],
+    "extends": [
+        "plugin:react/recommended", 
+        "standard",
+        "prettier"
+    ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
@@ -16,7 +20,7 @@
     "plugins": ["react", "@typescript-eslint"],
     "rules": {
         "react/react-in-jsx-scop": "off",
-        "no-use-before-define":"off",
-        "@typescript-eslint/no-use-before-define":"error"
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": "error"
     }
 }
