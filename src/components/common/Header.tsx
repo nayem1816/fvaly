@@ -12,8 +12,14 @@ import { FiPhoneCall, FiShoppingBag } from 'react-icons/fi';
 import { FaRegEnvelope } from 'react-icons/fa';
 import { BsPhone } from 'react-icons/bs';
 import { BiSearch, BiUser } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { AppState } from 'redux/store';
+import { IProduct } from 'Models/types';
 
 const Header = () => {
+    const cart: IProduct[] = useSelector((state: AppState) => state.cart);
+
     return (
         <div>
             <div className="header-component">
@@ -42,7 +48,9 @@ const Header = () => {
                 <div className="middle-header">
                     <Container>
                         <div className="d-flex align-items-center py-3 gap-5">
-                            <img className="branding" src={logo} alt="" />
+                            <Link to="/">
+                                <img className="branding" src={logo} alt="" />
+                            </Link>
                             <InputGroup className="">
                                 <FormControl
                                     className="border border-primary"
@@ -56,10 +64,17 @@ const Header = () => {
                             </InputGroup>
                             <ul className="list-icon list-unstyled d-flex gap-4">
                                 <li>
-                                    <FiShoppingBag />
+                                    <Link to="/checkout">
+                                        <FiShoppingBag />
+                                        <span className="badge bg-primary">
+                                            {cart.length}
+                                        </span>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <BiUser />
+                                    <a href="#">
+                                        <BiUser />
+                                    </a>
                                 </li>
                             </ul>
                         </div>
